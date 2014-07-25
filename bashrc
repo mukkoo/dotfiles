@@ -37,9 +37,9 @@ PS1="\n${BASH_STATUS} ${PROMPT_INFO} ${PROMPT_RUBY} ${PROMPT_GIT} ${PROMPT_FOOTE
 ## Aliases
 
 alias l='ls -CF'
-alias ls='ls -hF --color=auto'
-alias ll='ls -hFl --color=auto'
-alias la='ls -lhAF --color=auto'
+alias ls='ls -hFG'
+alias ll='ls -hFlG'
+alias la='ls -lhAFG'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -59,13 +59,13 @@ alias hk='heroku'
 alias sudo='sudo '
 
 # Security
-alias rm='rm -i --preserve-root'
+alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+alias chown='chown'
+alias chmod='chmod'
+alias chgrp='chgrp'
 
 # Add an "alert" alias for long running commands.  Use like so:
 # sleep 10; alert
@@ -108,8 +108,8 @@ export HISTCONTROL="ignoreboth"
 export EDITOR="vim"
 
 ## Lampp
-export WP_CLI_PHP=/opt/lampp/bin/php
-export PATH=$PATH:/opt/lampp/bin
+#export WP_CLI_PHP=/opt/lampp/bin/php
+#export PATH=$PATH:/opt/lampp/bin
 
 
 [[ -s "$HOME/.bunctionsh" ]] && source "$HOME/.bunctionsh"
@@ -120,3 +120,7 @@ if [[ -f ~/.bunctionsh ]]; then
   source ~/.bunctionsh
 fi
 
+
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
