@@ -8,4 +8,13 @@ fi
 
 source $HOME/.bashrc
 source $HOME/.profile
+
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
 export PATH=/usr/local/bin:$PATH
+source /usr/local/bin/wp-completion.bash
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

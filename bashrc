@@ -26,8 +26,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
 
 PROMPT_INFO="${WHITE}[\A] ${GREEN}\u${WHITE}(${GREEN}\h${WHITE})${NC} ${BLUE}\w"
-PROMPT_RUBY="[\$( rvm-prompt u ' ' g )]"
-PROMPT_GIT="\$(psgit_function)"
+
+PROMPT_RUBY="[\$(rvm-prompt)]"
+PROMPT_GIT="${YELLOW}\$(__git_ps1)"
 PROMPT_FOOTER="\n\$(is_vim_running && echo \"${RED}\" || echo \"${BLACK}\")↳ ${GREEN}\$ ${NC}"
 BASH_STATUS='`if [[ $? == 0 ]]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi`'
 PROMPT_DIRTRIM=3
@@ -50,8 +51,6 @@ alias du='du -hc'
 
 alias recent='ls -lhAFt --color=auto'
 alias ports='netstat -tulanp'
-alias apache2_restart='sudo service apache2 restart'
-alias mysql_restart='sudo service mysql restart'
 
 alias hk='heroku'
 
@@ -70,9 +69,6 @@ alias chgrp='chgrp'
 # Add an "alert" alias for long running commands.  Use like so:
 # sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Bash aliases
-source ~/.gitaliases
 
 ## Shopt options
 shopt -s cdspell        # This will correct minor spelling errors in cd command.
@@ -122,8 +118,11 @@ fi
 
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+
+### Use binstubs automatically, automagically, autorunningly
+export PATH="./bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
