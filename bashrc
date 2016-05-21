@@ -28,12 +28,13 @@ GIT_PS1_SHOWUPSTREAM="auto"
 PROMPT_INFO="${WHITE}[\A] ${GREEN}\u${WHITE}(${GREEN}\h${WHITE})${NC} ${BLUE}\w"
 
 PROMPT_RUBY="[\$(rvm-prompt)]"
+PROMPT_NODE="[\$(nvm version)]"
 PROMPT_GIT="${YELLOW}\$(__git_ps1)"
 PROMPT_FOOTER="\n\$(is_vim_running && echo \"${RED}\" || echo \"${BLACK}\")↳ ${GREEN}\$ ${NC}"
 BASH_STATUS='`if [[ $? == 0 ]]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi`'
 PROMPT_DIRTRIM=3
 
-PS1="\n${BASH_STATUS} ${PROMPT_INFO} ${PROMPT_RUBY} ${PROMPT_GIT} ${PROMPT_FOOTER}"
+PS1="\n${BASH_STATUS} ${PROMPT_INFO} ${PROMPT_RUBY} ${PROMPT_NODE} ${PROMPT_GIT} ${PROMPT_FOOTER}"
 
 ## Aliases
 
@@ -126,6 +127,9 @@ export PATH="./bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# GO
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 ### Fix some problems w/ iTerm2 and binding.pry
 export LC_CTYPE=it_IT.UTF-8

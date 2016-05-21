@@ -18,3 +18,8 @@ source /usr/local/bin/wp-completion.bash
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+export PGHOST=localhost
