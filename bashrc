@@ -120,7 +120,11 @@ fi
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export PATH="/usr/local/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+
+# Postgres
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+# Mysql
+export PATH="/usr/local/opt/mysql55/bin:$PATH"
 
 ### Use binstubs automatically, automagically, autorunningly
 export PATH="./bin:$PATH"

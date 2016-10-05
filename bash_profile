@@ -23,3 +23,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export PGHOST=localhost
+
+# load up rbenv
+[ -f `which rbenv` ] && eval "$(rbenv init -)"

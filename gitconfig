@@ -78,7 +78,7 @@
   untracked = red
 
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/mukkoo/.gitignore_global
   editor = vim
   pager = less -r
 
@@ -90,3 +90,9 @@
 
 [push]
   default = current
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
