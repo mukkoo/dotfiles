@@ -135,3 +135,9 @@ export LC_ALL=it_IT.UTF-8
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
+
+# Welaika works paths
+
+# wordpress for wordmove
+export WORDPRESS_WORKS_PATH="$HOME/Development/Works"
+
