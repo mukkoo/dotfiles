@@ -27,8 +27,8 @@ GIT_PS1_SHOWUPSTREAM="auto"
 
 PROMPT_INFO="${WHITE}[\A] ${GREEN}\u${WHITE}(${GREEN}\h${WHITE})${NC} ${BLUE}\w"
 
-PROMPT_RUBY="[\$(rvm-prompt)]"
 PROMPT_NODE="[\$(nvm version)]"
+PROMPT_RUBY="[\$(rbenv version | sed -e 's/ .*//')]"
 PROMPT_GIT="${YELLOW}\$(__git_ps1)"
 PROMPT_FOOTER="\n\$(is_vim_running && echo \"${RED}\" || echo \"${BLACK}\")↳ ${GREEN}\$ ${NC}"
 BASH_STATUS='`if [[ $? == 0 ]]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi`'
@@ -94,10 +94,6 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-## RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-alias rgs='rvm gemset'
-
 ## Exports
 export HISTSIZE=10000
 export HISTFILESIZE=10000
@@ -108,17 +104,13 @@ export EDITOR="vim"
 #export WP_CLI_PHP=/opt/lampp/bin/php
 #export PATH=$PATH:/opt/lampp/bin
 
-
 [[ -s "$HOME/.bunctionsh" ]] && source "$HOME/.bunctionsh"
-
 
 # Personal functions definition
 if [[ -f ~/.bunctionsh ]]; then
   source ~/.bunctionsh
 fi
 
-
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export PATH="/usr/local/bin:$PATH"
 
 # Postgres
@@ -140,3 +132,6 @@ export LC_CTYPE=it_IT.UTF-8
 export LANG=it_IT.UTF-8
 export LC_ALL=it_IT.UTF-8
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
