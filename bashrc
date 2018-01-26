@@ -27,7 +27,7 @@ GIT_PS1_SHOWUPSTREAM="auto"
 
 PROMPT_INFO="${WHITE}[\A] ${GREEN}\u${WHITE}(${GREEN}\h${WHITE})${NC} ${BLUE}\w"
 
-PROMPT_NODE="[\$(nvm version)]"
+# PROMPT_NODE="[\$(nvm version)]"
 PROMPT_RUBY="[\$(rbenv version | sed -e 's/ .*//')]"
 PROMPT_GIT="${YELLOW}\$(__git_ps1)"
 PROMPT_FOOTER="\n\$(is_vim_running && echo \"${RED}\" || echo \"${BLACK}\")↳ ${GREEN}\$ ${NC}"
@@ -49,6 +49,7 @@ alias diff='colordiff'
 alias mkdir='mkdir -p'
 alias df='df -h'
 alias du='du -hc'
+alias gi='git'
 
 alias recent='ls -lhAFt --color=auto'
 alias ports='netstat -tulanp'
@@ -66,6 +67,9 @@ alias ln='ln -i'
 alias chown='chown'
 alias chmod='chmod'
 alias chgrp='chgrp'
+
+# Funny
+alias mov2gif='~/.dotfiles/mov_to_gif.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 # sleep 10; alert
@@ -116,7 +120,7 @@ export PATH="/usr/local/bin:$PATH"
 # Postgres
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 # Mysql
-export PATH="/usr/local/opt/mysql55/bin:$PATH"
+# export PATH="/usr/local/opt/mysql55/bin:$PATH"
 
 ### Use binstubs automatically, automagically, autorunningly
 export PATH="./bin:$PATH"
@@ -141,3 +145,19 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 # wordpress for wordmove
 export WORDPRESS_WORKS_PATH="$HOME/Development/Works"
 
+# Rails Last migration
+function echo_last_migration {
+  migrate_path='db/migrate/'
+  nth_migration=$((${1:-0}+1))
+  echo "${migrate_path}$(ls -1t $migrate_path | head -$nth_migration | tail -1)"
+}
+
+function last_migration {
+  subl $(echo_last_migration $*)
+}
+
+# Smallpay
+export SMALLPAY_DEV_ROOT="$HOME/Development/Works/seesaw"
+
+# erlang
+export ERL_AFLAGS="-kernel shell_history enabled"

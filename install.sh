@@ -12,6 +12,7 @@ gitconfig
 gitignore_global
 inputrc
 rvmrc
+tmux.conf
 )
 
 function warn() {

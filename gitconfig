@@ -12,6 +12,9 @@
   st = status
   ss = status --short
 
+  taddp = add -p .
+  tst = status
+
   # info
   fame = shortlog -s -n --
   allfame = shortlog -s -n --all --
@@ -45,6 +48,8 @@
   ll = log --oneline --decorate --stat --graph
   ls = log --oneline --decorate --graph --branches --remotes --simplify-by-decoration -n 20
   t  = log --oneline --decorate --graph --branches --remotes -20 --pretty=format:'%C(yellow)%h%C(red bold)%d %Creset%s %C(green)(%ar) %C(cyan)<%cn>' --date=relative
+
+  tls = log --oneline --decorate --graph --branches --remotes --simplify-by-decoration -n 20
 
   # list aliases
   al = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' && tail -n +2 ~/.gitaliases | colrm 1 6
