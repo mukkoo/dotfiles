@@ -85,7 +85,7 @@
 [core]
 	excludesfile = /Users/mukkoo/.gitignore_global
   editor = vim
-  pager = less -r
+  pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r
 
 [diff]
   tool = vimdiff
@@ -105,9 +105,9 @@
 	trustExitCode = true
 
 [pager]
-  log = 'diff-highlight | less'
-  show = 'diff-highlight | less'
-  diff = 'diff-highlight | less'
+  log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r
+  show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r
+  diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r
 
 [interactive]
-  diffFilter = diff-highlight
+  diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r
