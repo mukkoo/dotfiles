@@ -35,6 +35,7 @@ BASH_STATUS='`if [[ $? == 0 ]]; then echo "\[\033[01;32m\]✔"; else echo "\[\03
 PROMPT_DIRTRIM=3
 
 PS1="\n${BASH_STATUS} ${PROMPT_INFO} ${PROMPT_RUBY} ${PROMPT_NODE} ${PROMPT_GIT} ${PROMPT_FOOTER}"
+RAILS_ENV=development
 
 ## Aliases
 
@@ -132,13 +133,19 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 ### Fix some problems w/ iTerm2 and binding.pry
-export LC_CTYPE=it_IT.UTF-8
-export LANG=it_IT.UTF-8
-export LC_ALL=it_IT.UTF-8
+#export LC_CTYPE=it_IT.UTF-8
+#export LANG=it_IT.UTF-8
+#export LC_ALL=it_IT.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
+
+# composer
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Welaika works paths
 

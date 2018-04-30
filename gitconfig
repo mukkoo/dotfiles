@@ -89,6 +89,7 @@
 
 [diff]
   tool = vimdiff
+	submodule = log
 
 [pull]
   rebase = true

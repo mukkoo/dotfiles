@@ -9,8 +9,9 @@ fi
 source $HOME/.bashrc
 source $HOME/.profile
 
-MYSQL=/usr/local/mysql/bin
-export PATH=$PATH:$MYSQL
+# MYSQL=/usr/local/mysql/bin
+MYSQL=/usr/local/opt/mysql@5.5/bin
+export PATH=$MYSQL:$PATH
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 export PATH=/usr/local/bin:$PATH
