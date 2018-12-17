@@ -147,6 +147,9 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 # composer
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
+# MacTex
+# export PATH="/Library/TeX/texbin:$PATH"
+
 # Welaika works paths
 
 # wordpress for wordmove

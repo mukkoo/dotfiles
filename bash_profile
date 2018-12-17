@@ -27,3 +27,11 @@ export PGHOST=localhost
 
 # load up rbenv
 [ -f `which rbenv` ] && eval "$(rbenv init -)"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"

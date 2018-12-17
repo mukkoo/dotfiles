@@ -63,6 +63,15 @@
   resolved = add
   remotes = remote -v
 
+  # Output default branch name (ex. master)
+  default-branch="!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+
+  # Remove all local branches excluding default branch
+  remove-local-branches="!git branch --no-color | grep -v $(git default-branch)  | xargs git branch -D"
+
+  # Checkout on default branch, update branches and remove local branches
+  update-all="!git default-branch | xargs -n 1 git co && git fetch origin && git remote prune origin && git pull && git remove-local-branches"
+
 [color]
   ui = auto
 
